@@ -16,6 +16,18 @@ cd ../
 ```
 
 Or, create a directory `data` and download the 'Spreadsheet' from the [OpenData DC website](https://opendata.dc.gov/datasets/311-city-service-requests-in-2019) and place into `data`.
+
+The resulting project should look like this:
+```shell script
+├── HW1.ipynb
+├── LICENSE
+├── README.md
+├── data
+│   └── 311_City_Service_Requests_in_2019.csv
+└── images
+    ├── ORGANIZATION.png
+    └── RESOLVED_ON_TIME.png
+```
  
 ## Hypothesis
 
@@ -25,9 +37,11 @@ Or, create a directory `data` and download the 'Spreadsheet' from the [OpenData 
 
 ## Data Cleaning
 
-The primary tasks for data cleaning for this project revolved around casting data types - floats to ints and strings to datetime.  
+The primary tasks for data cleaning for this project revolved around casting data types - floats to ints and strings to datetime.  Some fields required null values filled.
 
-## Results
+The secondary cleaning tasks were associated with determining the status of the service requests.  There are two status fields -  `SERVICEORDERSTATUS` and `STATUS_CODE`.  The fields were explored and normalized into a new field, `STATUS`, before removing in-progress, void and other states which to goal of establishing a clear OPEN vs CLOSED dichotomy.
+
+## Analysis
 
 ### Volume of Requests by Ward
 
